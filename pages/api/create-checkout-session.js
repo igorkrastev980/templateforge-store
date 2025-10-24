@@ -9,7 +9,7 @@ export default async function handler(req, res) {
         payment_method_types: ["card"],
         line_items: [
           {
-            price: "YOUR_STRIPE_PRICE_ID",
+            price: "price_1SLQUQ8fWwg3UsRzLEcIYUpx",
             quantity: 1,
           },
         ],
