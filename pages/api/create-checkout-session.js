@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         payment_method_types: ["card"],
         line_items: [
           {
-            price: "price_12345", // <-- price_1SLQUQ8fWwg3UsRzLEcIYUpx
+            price: "price_12345", // <-- price_1SLrQg8fWwg3UsRzcJcvZqQh
             quantity: 1,
           },
         ],
