@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
       console.log("Stripe key starts with:", process.env.STRIPE_SECRET_KEY?.substring(0, 10));
-      const session = await stripe.checkout.sessions.create({
+      const session = await console.log("Stripe key starts with:", process.env.STRIPE_SECRET_KEY?.substring(0, 10));stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         line_items: [
           {
