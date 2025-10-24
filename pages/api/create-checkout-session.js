@@ -5,25 +5,22 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
-      // ✅ Replace this price ID with your real Stripe price_XXXX
-      const YOUR_PRICE_ID = "price_1SLQUQ8fWwg3UsRzLEcIYUpx";
-
       const session = await stripe.checkout.sessions.create({
-        mode: "payment",
         payment_method_types: ["card"],
         line_items: [
           {
-            price: YOUR_PRICE_ID,
+            price: "YOUR_STRIPE_PRICE_ID",
             quantity: 1,
           },
         ],
+        mode: "payment",
         success_url: `${req.headers.origin}/success`,
         cancel_url: `${req.headers.origin}/cancel`,
       });
 
-      res.status(200).json({ id: session.id, url: session.url });
+      res.status(200).json({ url: session.url });
     } catch (err) {
-      console.error(err);
+      console.error("Stripe checkout error:", err);
       res.status(500).json({ error: err.message });
     }
   } else {
