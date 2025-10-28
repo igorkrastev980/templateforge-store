@@ -1,17 +1,24 @@
-import Link from "next/link";
 import { XCircle } from "lucide-react";
+import Link from "next/link";
 
-export default function Cancel() {
+export default function CancelPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 text-center px-4">
-      <XCircle size={72} className="text-red-500 mb-6" />
-      <h1 className="text-3xl font-bold mb-4">Payment Canceled</h1>
-      <p className="text-gray-600 mb-8 max-w-md">
-        Your payment was not completed. Don’t worry, you can try again at any time.
-      </p>
-      <Link href="/" className="bg-gray-800 text-white px-6 py-3 rounded-xl hover:bg-gray-900 transition">
-        Back to Home
-      </Link>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-6">
+      <div className="max-w-md rounded-2xl bg-white p-8 text-center shadow-md">
+        <XCircle className="mx-auto mb-4 text-red-500" size={60} />
+        <h1 className="mb-3 text-2xl font-semibold text-gray-800">
+          Payment Cancelled
+        </h1>
+        <p className="mb-6 text-gray-600">
+          Your checkout session was cancelled. You can try again anytime.
+        </p>
+        <Link
+          href="/"
+          className="rounded-lg bg-gray-800 px-6 py-2 font-medium text-white transition hover:bg-gray-900"
+        >
+          Back to Store
+        </Link>
+      </div>
     </div>
   );
 }
